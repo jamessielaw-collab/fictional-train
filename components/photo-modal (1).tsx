@@ -5,17 +5,19 @@ import Image from "next/image";
 import { X } from "lucide-react";
 
 const images = [
+const images = [
   "/gallery-1.jpg",
   "/gallery-2.jpg",
   "/gallery-3.jpg",
   "/gallery-4.jpg",
   "/gallery-5.jpg",
-  // Removed "/gallery-6.jpg"
+  "/gallery-6-min.jpg", // updated here
   "/gallery-7.jpg",
   "/gallery-8.jpg",
   "/pre-wedding.jpg",
   "/social-image-4.jpg",
 ];
+
 
 export default function PhotoModal() {
   const [isOpen, setIsOpen] = useState(false);
