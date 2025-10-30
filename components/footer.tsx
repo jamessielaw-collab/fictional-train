@@ -17,18 +17,18 @@ export default function Footer() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-8 py-16">
-        {/* Logo at Top Center */}
+        {/* Logo on the Left */}
         <motion.div
-          className="flex justify-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="flex justify-start mb-12"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.img 
-            src="/images/makeupbycarey-logo.png" 
-            alt="MakeupByCarey Logo" 
-            className="h-24 w-auto"
+          <motion.img
+            src="/images/makeupbycarey-logo.png"
+            alt="MakeupByCarey Logo"
+            className="h-32 w-auto" // increased size from h-24 to h-32
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           />
@@ -42,14 +42,21 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3 className="font-playfair text-2xl md:text-3xl mb-3" style={{ color: '#c5bbaf' }}>
+          <h3
+            className="font-playfair text-2xl md:text-3xl mb-3"
+            style={{ color: "#c5bbaf" }}
+          >
             Stay Connected
           </h3>
           <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
-            Join our exclusive list for beauty tips, wedding inspiration, and special offers.
+            Join our exclusive list for beauty tips, wedding inspiration, and
+            special offers.
           </p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
             <input
               type="email"
               placeholder="Enter your email address"
@@ -59,8 +66,8 @@ export default function Footer() {
             <motion.button
               type="submit"
               className="px-8 py-3 rounded-full font-medium text-sm flex items-center justify-center gap-2 transition-all"
-              style={{ backgroundColor: '#c5bbaf', color: '#1a1a1a' }}
-              whileHover={{ scale: 1.05, backgroundColor: '#d4cbc1' }}
+              style={{ backgroundColor: "#c5bbaf", color: "#1a1a1a" }}
+              whileHover={{ scale: 1.05, backgroundColor: "#d4cbc1" }}
               whileTap={{ scale: 0.95 }}
             >
               Subscribe
@@ -71,19 +78,18 @@ export default function Footer() {
 
         {/* Decorative Divider */}
         <div className="relative h-px mb-12">
-          <div 
+          <div
             className="absolute inset-0 h-px"
             style={{
-              background: 'linear-gradient(90deg, transparent 0%, #c5bbaf 20%, #c5bbaf 80%, transparent 100%)',
-              opacity: 0.3
+              background:
+                "linear-gradient(90deg, transparent 0%, #c5bbaf 20%, #c5bbaf 80%, transparent 100%)",
+              opacity: 0.3,
             }}
           ></div>
         </div>
 
-        {/* Main Content Grid */}
-        {/* (de rest van je content blijft identiek) */}
-
-        <motion.div 
+        {/* Main Content Grid (unchanged) */}
+        <motion.div
           className="text-center space-y-4 pt-8 border-t border-stone-800"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -94,9 +100,19 @@ export default function Footer() {
             © 2024 MakeupByCarey. Crafted with passion in Amsterdam.
           </p>
           <div className="flex justify-center gap-6 text-xs">
-            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">Privacy Policy</a>
+            <a
+              href="#"
+              className="text-stone-500 hover:text-stone-300 transition-colors"
+            >
+              Privacy Policy
+            </a>
             <span className="text-stone-700">•</span>
-            <a href="#" className="text-stone-500 hover:text-stone-300 transition-colors">Terms of Service</a>
+            <a
+              href="#"
+              className="text-stone-500 hover:text-stone-300 transition-colors"
+            >
+              Terms of Service
+            </a>
           </div>
         </motion.div>
       </div>
