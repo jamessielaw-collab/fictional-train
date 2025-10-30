@@ -4,24 +4,28 @@ import { useState } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 
-const images = [
-const images = [
+const imageSources = [
   "/gallery-1.jpg",
   "/gallery-2.jpg",
   "/gallery-3.jpg",
   "/gallery-4.jpg",
   "/gallery-5.jpg",
-  "/gallery-6-min.jpg", // updated here
+  "/gallery-6-min.jpg",
   "/gallery-7.jpg",
   "/gallery-8.jpg",
   "/pre-wedding.jpg",
   "/social-image-4.jpg",
 ];
 
-
 export default function PhotoModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSrc, setActiveSrc] = useState<string | null>(null);
+  const [images, setImages] = useState(imageSources);
+
+  // Filter out any image that fails to load
+  const handleImageError = (badSrc: string) => {
+    setImages((prev) => prev.filter((src) => src !== badSrc));
+  };
 
   return (
     <>
@@ -41,6 +45,7 @@ export default function PhotoModal() {
               alt={`Gallery image ${index + 1}`}
               width={400}
               height={300}
+              onError={() => handleImageError(src)}
               className="w-full h-auto object-cover rounded-lg transition-transform hover:scale-105"
             />
           </div>
@@ -67,6 +72,7 @@ export default function PhotoModal() {
                 alt="Enlarged photo"
                 width={1200}
                 height={800}
+                onError={() => handleImageError(activeSrc)}
                 className="w-full h-full object-contain"
                 priority
               />
