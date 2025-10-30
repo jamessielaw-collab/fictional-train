@@ -10,6 +10,7 @@ const images = [
   "/gallery-3.jpg",
   "/gallery-4.jpg",
   "/gallery-5.jpg",
+  // Removed "/gallery-6.jpg"
   "/gallery-7.jpg",
   "/gallery-8.jpg",
   "/pre-wedding.jpg",
